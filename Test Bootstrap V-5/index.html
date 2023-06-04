@@ -71,9 +71,18 @@
                     </h1>
                     <p class="lead my-4 text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                     <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
+
+                    <!-- Open Sidebar && offcanvas -->
+                    <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button"
+                        aria-controls="sidebar">
+                        Explore my other books</a>
                 </div>
                 <div class="col-md-5 text-center d-none d-md-block">
-                    <img class="img-fluid" width="400" src="./assets/img/ninja pro1.jfif">
+
+                    <!-- Tooltip == waku hover waya katak mouse abyta sary nusint pishan adat   -->
+                    <span class="tt" data-bs-placement="bottom" title="Net Ninja Book Cover">
+                        <img class="img-fluid" width="400" src="./assets/img/ninja pro1.jfif">
+                    </span>
                 </div>
             </div>
         </div>
@@ -394,6 +403,13 @@
                                 <i class="bi bi-envelope-fill"></i>
                             </span>
                             <input type="email" class="form-control" id="email" placeholder="e.g.Romi@wxample.com">
+
+                            <!-- Tooltip -->
+                            <span class="input-group-text">
+                                <span class="tt" data-bs-placement="bottom" title="Enter an email we can reply to.">
+                                    <i class="bi bi-question-circle text-muted"></i>
+                                </span>
+                            </span>
                         </div>
 
                         <label for="name" class="form-label">Name:</label>
@@ -402,6 +418,13 @@
                                 <i class="bi bi-person-fill"></i>
                             </span>
                             <input type="text" class="form-control" id="name" placeholder="e.g. Lanya">
+
+                            <!-- Tooltip -->
+                            <span class="input-group-text">
+                                <span class="tt" data-bs-placement="bottom" title="Pretty self explanotery really...">
+                                    <i class="bi bi-question-circle text-muted"></i>
+                                </span>
+                            </span>
                         </div>
 
                         <label for="subject" class="form-label">What is your question about</label>
@@ -429,7 +452,79 @@
     </section>
 
 
+    <!-- Modal -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2>Stay in The Loop</h2>
+                <p class="lead">Get the latest updates as they happen...</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <p class="text-muted my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero similique
+                        harum inventore nulla nihil laboriosam, impedit atque temporibus iusto accusantium
+                        exercitationem, tempora quos ab esse soluta, deserunt dolor deleniti voluptates blanditiis iste
+                        corrupti velit. Praesentium eos aliquid, sint, dignissimos natus cupiditate porro qui tempore
+                        corporis rerum quia nihil? Ea ex quod commodi nostrum eveniet odio!</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                        Register for Updates
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Itself -->
+    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Get the Latest Updates</h5>
+                    <button class="btn btn-lg" data-bs-dismiss="modal" aria-label="Close"><i
+                            class="bi bi-x-circle-fill"></i></button>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit sequi id quasi rerum ea ducimus
+                        voluptates iure molestias expedita aspernatur est, porro obcaecati dicta repellat saepe fuga
+                        asperiores quos quisquam autem quo cumque similique? Obcaecati ea doloribus nulla maiores cum
+                        velit ipsam deleniti cumque sit.</p>
+                    <label for="modal-email" class="form-label">Your email address:</label>
+                    <input type="email" class="form-control" id="modal-email" placeholder="e.g.Romi@example.com">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Sidebar && Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebar-label">My Other Books</h5>
+            <button type="button" class="btn btn-lg" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                    class="bi bi-x-circle-fill"></i></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde eos harum dolore, sint libero
+                exercitationem natus laborum vero iste, nam nulla asperiores corrupti maxime ratione aliquid error
+                accusamus quae maiores velit reiciendis modi sequi.</p>
+        </div>
+    </div>
+
+
+    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- bo Tooltip bakarman henawa -->
+    <script>
+        const tooltips = document.querySelectorAll('.tt');
+        tooltips.forEach(t => {
+            new bootstrap.Tooltip(t)
+        })
     </script>
 </body>
 
